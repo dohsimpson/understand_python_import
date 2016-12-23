@@ -11,8 +11,9 @@ cd "$DIR"
 
 # (cd p3; python -m run)  # This would still fail, because sys.path cannot find p2
 # (cd ..; python -m "$DIRNAME".p3.run)  # This fails in py2 because currect directory has no __init__.py therefore is not a package AND even if does, it fails because have to import p2 in absolute path: import "$DIRNAME".p2
-# python -c "import p3.run; print p3.__name__; print 'run' in globals()"  # only p3 is visibal in globals(), that is, in the global namespace. run is invisible
+# python -c "import p3.run; print p3.__name__; print 'run' in globals(); print 'p3.run' in globals()"  # p3 is visibal in globals(), that is, in the global namespace. run is loaded, and accessible as p3.run, but not in globals()
 # python -c "from p3 import run; print run.__name__; print 'p3' in globals()"  # This is the inverse; but note that in both, p3.__init__.py and p3.__run__.py is loaded
+# python -c "import p3; print p3.__name__; p3.run"  # in comparison, p3.run is not loaded if only import p3
 # python -m p4.run
 # python p4/run.py
 
