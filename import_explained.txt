@@ -1,4 +1,6 @@
 Searching:
 sys.modules (cache of imported modules) -> sys.meta_path
 
+sys.path[0] is '' (i.e. `cwd`) if run with `python -m` or `python -c` or interactive else set to executed file directory
+
 How does relative import works?

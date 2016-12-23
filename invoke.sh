@@ -13,6 +13,8 @@ cd "$DIR"
 # (cd ..; python -m "$DIRNAME".p3.run)  # This fails in py2 because currect directory has no __init__.py therefore is not a package AND even if does, it fails because have to import p2 in absolute path: import "$DIRNAME".p2
 # python -c "import p3.run; print p3.__name__; print 'run' in globals()"  # only p3 is visibal in globals(), that is, in the global namespace. run is invisible
 # python -c "from p3 import run; print run.__name__; print 'p3' in globals()"  # This is the inverse; but note that in both, p3.__init__.py and p3.__run__.py is loaded
+# python -m p4.run
+# python p4/run.py
 
 
 
