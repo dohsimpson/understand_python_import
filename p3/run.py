@@ -1,1 +1,1 @@
-from pprint import pprint
+from p2 import run as run2
